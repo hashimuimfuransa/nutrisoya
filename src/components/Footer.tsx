@@ -100,8 +100,8 @@ const Footer = () => {
             © {new Date().getFullYear()} JENICE-Nutrisoya. {t.footer.rights}
           </p>
           <div className="flex space-x-8 text-[10px] font-bold uppercase tracking-widest text-gray-500">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+            <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>
