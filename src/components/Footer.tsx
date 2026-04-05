@@ -17,7 +17,7 @@ const Footer = () => {
               <div className="bg-primary p-2 rounded-lg">
                 <Leaf className="h-5 w-5 text-white" />
               </div>
-              <span className="text-2xl font-black tracking-tighter uppercase">Nutrisoya</span>
+              <span className="text-2xl font-black tracking-tighter uppercase">JENICE-Nutrisoya</span>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
               {t.hero.subtitle}
@@ -62,14 +62,14 @@ const Footer = () => {
                 <Phone className="h-5 w-5 text-primary flex-shrink-0" />
                 <div className="space-y-1">
                   <p className="text-xs text-gray-500 font-bold uppercase tracking-wider">Call Us</p>
-                  <p className="text-sm font-medium">+250 788 000 000</p>
+                  <p className="text-sm font-medium">+250 788 503 005<br/>+250 788 483 846</p>
                 </div>
               </li>
               <li className="flex items-start space-x-4">
                 <Mail className="h-5 w-5 text-primary flex-shrink-0" />
                 <div className="space-y-1">
                   <p className="text-xs text-gray-500 font-bold uppercase tracking-wider">Email Us</p>
-                  <p className="text-sm font-medium">info@nutrisoya.rw</p>
+                  <p className="text-sm font-medium">mukejudi@gmail.com</p>
                 </div>
               </li>
             </ul>
@@ -97,7 +97,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-800 pt-12 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <p className="text-gray-500 text-[10px] font-bold uppercase tracking-widest">
-            © {new Date().getFullYear()} Nutrisoya. {t.footer.rights}
+            © {new Date().getFullYear()} JENICE-Nutrisoya. {t.footer.rights}
           </p>
           <div className="flex space-x-8 text-[10px] font-bold uppercase tracking-widest text-gray-500">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>

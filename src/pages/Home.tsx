@@ -68,7 +68,7 @@ const Home = () => {
               
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
                 <button
-                  onClick={() => window.open('https://wa.me/250788000000', '_blank')}
+                  onClick={() => window.open('https://wa.me/250788503005', '_blank')}
                   className="bg-primary text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-primary/90 transition-all shadow-lg shadow-primary/20 flex items-center justify-center space-x-2 group"
                 >
                   <MessageCircle className="h-5 w-5" />
@@ -211,7 +211,7 @@ const Home = () => {
           <div className="space-y-6">
             <h2 className="text-3xl font-bold text-gray-900">{t.about.title}</h2>
             <p className="text-gray-600 text-lg leading-relaxed">
-              Nutrisoya is dedicated to improving food diet and cost effectiveness through soya products promotion. 
+              JENICE-Nutrisoya is dedicated to improving food diet and cost effectiveness through soya products promotion. 
               We combine modern processing technology with natural ingredients to deliver healthy and affordable nutrition.
             </p>
             <Link to="/about" className="inline-flex items-center space-x-2 text-primary font-bold hover:underline">
@@ -273,6 +273,34 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Location Map Section */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="bg-white rounded-[3rem] p-12 border border-gray-100 shadow-sm">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold text-gray-900 mb-2">
+              {language === 'en' ? 'Visit Us' : 'Tusura'}
+            </h2>
+            <p className="text-gray-600">
+              {language === 'en' 
+                ? 'Location: Kimisagara - Nyarugenge, Kigali, Rwanda' 
+                : 'Aho turerereye: Kimisagara - Nyarugenge, Kigali, u Rwanda'}
+            </p>
+          </div>
+          <div className="rounded-2xl overflow-hidden shadow-lg h-[400px]">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.5038!2d30.0587!3d-1.9536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca7b5e5e5e5e5%3A0x5e5e5e5e5e5e5e5e!2sKimisagara%2C%20Nyarugenge%2C%20Kigali%2C%20Rwanda!5e0!3m2!1sen!2srw!4v1234567890"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen={true}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="JENICE-Nutrisoya Location"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-primary rounded-[3rem] p-12 lg:p-20 text-center text-white relative overflow-hidden">
@@ -289,7 +317,7 @@ const Home = () => {
                 : 'Sanga imiryango ibihumbi wishimira ibicuruzwa byacu bya soya bifite intungamubiri.'}
             </p>
             <button
-              onClick={() => window.open('https://wa.me/250788000000', '_blank')}
+              onClick={() => window.open('https://wa.me/250788503005', '_blank')}
               className="bg-white text-primary px-10 py-5 rounded-2xl font-bold text-xl hover:bg-gray-50 transition-all flex items-center justify-center space-x-3 mx-auto shadow-xl group"
             >
               <MessageCircle className="h-6 w-6 group-hover:scale-110 transition-transform" />

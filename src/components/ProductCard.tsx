@@ -15,8 +15,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const benefits = product.benefits[language];
 
   const handleWhatsApp = () => {
-    const message = `Hello Nutrisoya, I would like to order ${name}.`;
-    window.open(`https://wa.me/250788000000?text=${encodeURIComponent(message)}`, '_blank');
+    const message = `Hello JENICE-Nutrisoya, I would like to order ${name}.`;
+    window.open(`https://wa.me/250788503005?text=${encodeURIComponent(message)}`, '_blank');
   };
 
   return (

@@ -9,9 +9,9 @@ const Contact = () => {
   const t = translations[language];
 
   const contactInfo = [
-    { icon: Phone, title: language === 'en' ? 'Phone' : 'Terefone', value: '+250 788 000 000' },
-    { icon: Mail, title: 'Email', value: 'info@nutrisoya.rw' },
-    { icon: MapPin, title: language === 'en' ? 'Location' : 'Aho turerereye', value: 'Kigali, Rwanda' },
+    { icon: Phone, title: language === 'en' ? 'Phone' : 'Terefone', value: '+250 788 503 005 / +250 788 483 846' },
+    { icon: Mail, title: 'Email', value: 'mukejudi@gmail.com' },
+    { icon: MapPin, title: language === 'en' ? 'Location' : 'Aho turerereye', value: 'Kimisagara - Nyarugenge, Kigali, Rwanda' },
   ];
 
   return (
@@ -73,31 +73,30 @@ const Contact = () => {
             </div>
 
             <button
-              onClick={() => window.open('https://wa.me/250788000000', '_blank')}
+              onClick={() => window.open('https://wa.me/250788503005', '_blank')}
               className="w-full bg-[#25D366] hover:bg-[#25D366]/90 text-white py-5 rounded-2xl font-bold text-xl flex items-center justify-center space-x-3 transition-all shadow-lg shadow-[#25D366]/20"
             >
               <MessageCircle className="h-7 w-7" />
               <span>{t.contact.whatsapp}</span>
             </button>
 
-            {/* Map Placeholder */}
+            {/* Map */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-gray-100 to-gray-50 rounded-3xl h-64 w-full flex items-center justify-center overflow-hidden relative group hover:shadow-lg transition-shadow duration-300"
+              className="bg-gradient-to-br from-gray-100 to-gray-50 rounded-3xl h-64 w-full overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
-              <img 
-                src="/baga.jpg" 
-                alt="Map" 
-                className="w-full h-full object-cover opacity-40 grayscale group-hover:scale-105 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="bg-white px-6 py-3 rounded-full shadow-lg flex items-center space-x-2 group-hover:shadow-xl transition-shadow duration-300">
-                  <MapPin className="h-5 w-5 text-primary" />
-                  <span className="font-bold text-gray-900">Kigali, Rwanda</span>
-                </div>
-              </div>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.5038!2d30.0587!3d-1.9536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca7b5e5e5e5e5%3A0x5e5e5e5e5e5e5e5e!2sKimisagara%2C%20Nyarugenge%2C%20Kigali%2C%20Rwanda!5e0!3m2!1sen!2srw!4v1234567890"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="JENICE-Nutrisoya Location"
+              ></iframe>
             </motion.div>
           </div>
 
@@ -108,11 +107,26 @@ const Contact = () => {
             viewport={{ once: true }}
             className="bg-white p-10 lg:p-12 rounded-[3rem] shadow-2xl border border-gray-50"
           >
-            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+            <form className="space-y-6" onSubmit={(e) => {
+              e.preventDefault();
+              const formData = new FormData(e.currentTarget);
+              const name = formData.get('name');
+              const email = formData.get('email');
+              const message = formData.get('message');
+              
+              const subject = encodeURIComponent(`Message from ${name} - JENICE-Nutrisoya Website`);
+              const body = encodeURIComponent(
+                `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+              );
+              
+              window.open(`mailto:mukejudi@gmail.com?subject=${subject}&body=${body}`, '_blank');
+            }}>
               <div className="space-y-2">
                 <label className="text-sm font-bold text-gray-700 ml-1">{t.contact.formName}</label>
                 <input
                   type="text"
+                  name="name"
+                  required
                   className="w-full px-6 py-4 rounded-2xl bg-gray-50 border-2 border-transparent focus:bg-white focus:border-primary focus:ring-0 transition-all outline-none hover:bg-gray-100 focus:hover:bg-white"
                   placeholder="John Doe"
                 />
@@ -121,6 +135,8 @@ const Contact = () => {
                 <label className="text-sm font-bold text-gray-700 ml-1">{t.contact.formEmail}</label>
                 <input
                   type="email"
+                  name="email"
+                  required
                   className="w-full px-6 py-4 rounded-2xl bg-gray-50 border-2 border-transparent focus:bg-white focus:border-primary focus:ring-0 transition-all outline-none hover:bg-gray-100 focus:hover:bg-white"
                   placeholder="john@example.com"
                 />
@@ -128,6 +144,8 @@ const Contact = () => {
               <div className="space-y-2">
                 <label className="text-sm font-bold text-gray-700 ml-1">{t.contact.formMessage}</label>
                 <textarea
+                  name="message"
+                  required
                   rows={5}
                   className="w-full px-6 py-4 rounded-2xl bg-gray-50 border-2 border-transparent focus:bg-white focus:border-primary focus:ring-0 transition-all outline-none resize-none hover:bg-gray-100 focus:hover:bg-white"
                   placeholder={language === 'en' ? 'How can we help you?' : 'Twagufasha ute?'}

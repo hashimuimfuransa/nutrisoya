@@ -27,7 +27,7 @@ const Navbar = () => {
               <div className="bg-primary p-2 rounded-xl group-hover:rotate-12 transition-transform duration-300 shadow-lg shadow-primary/20">
                 <Leaf className="h-6 w-6 text-white" />
               </div>
-              <span className="text-2xl font-black text-gray-900 tracking-tighter uppercase">Nutrisoya</span>
+              <span className="text-2xl font-black text-gray-900 tracking-tighter uppercase">JENICE-Nutrisoya</span>
             </Link>
           </div>
 
